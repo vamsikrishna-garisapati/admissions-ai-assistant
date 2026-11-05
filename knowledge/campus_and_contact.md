@@ -10,3 +10,4 @@
 - **Email:** admissions@example.com
 - **Website:** [Add institute website URL]
 - **Campus Visits:** Walk-ins welcome during office hours for campus tours and direct counselor consultations.
+

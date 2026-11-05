@@ -16,3 +16,4 @@
 ## Policy Note on Placements
 - We provide comprehensive placement support, interview preparation, and job drive access to eligible students who complete their projects and meet attendance benchmarks.
 - We do not offer or guarantee fake job promises; job placement depends on student dedication, project mastery, and interview performance.
+

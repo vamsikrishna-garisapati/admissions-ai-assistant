@@ -14,3 +14,4 @@ Yes, students who maintain 85%+ attendance and complete their capstone projects 
 
 ### Q5: How do I schedule a direct counselling call?
 You can request a callback right here in the chatbot by sharing your name and contact number, and our admissions team will call you at your preferred time.
+

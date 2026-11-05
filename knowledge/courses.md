@@ -29,3 +29,4 @@
 ## Learning Modes
 - **Offline Classroom:** In-person interactive training with dedicated mentors, daily lab sessions, and direct guidance.
 - **Online Live Training:** Live interactive sessions with mentors, recorded session access, and daily doubt resolution.
+
