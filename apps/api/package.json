@@ -1,0 +1,25 @@
+{
+  "name": "@10k/api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "10000Coders AI Admissions Assistant Cloudflare Worker API",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "d1:migrate:local": "wrangler d1 migrations apply 10000coders-leads --local",
+    "d1:migrate:remote": "wrangler d1 migrations apply 10000coders-leads --remote"
+  },
+  "dependencies": {
+    "hono": "^4.7.2",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250214.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5",
+    "wrangler": "^3.111.0"
+  }
+}

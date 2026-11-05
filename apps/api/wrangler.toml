@@ -1,0 +1,33 @@
+name = "10000coders-ai-assistant"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "development"
+SESSION_SECRET = "dev_secret_replace_in_production_10000coders_ai"
+CORS_ORIGIN = "*"
+GOOGLE_SHEETS_WEBHOOK_URL = ""
+MAX_CHAT_TURNS_HISTORY = "4"
+SIMILARITY_SCORE_THRESHOLD = "0.65"
+
+# Cloudflare D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "10000coders-leads"
+database_id = "local-d1-id"
+migrations_dir = "migrations"
+
+# Cloudflare Workers AI binding
+[ai]
+binding = "AI"
+
+# Cloudflare Vectorize binding (768 dimensions for BGE Base)
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "10000coders-knowledge"
+
+# Cloudflare R2 bucket binding for knowledge documents
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "10000coders-docs"

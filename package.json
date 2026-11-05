@@ -1,0 +1,22 @@
+{
+  "name": "10k-chatbot-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "10000Coders AI Admissions Assistant Monorepo",
+  "scripts": {
+    "dev:api": "pnpm --filter @10k/api dev",
+    "test:api": "pnpm --filter @10k/api test",
+    "build:api": "pnpm --filter @10k/api build",
+    "test": "pnpm -r test"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "workerd",
+      "sharp"
+    ]
+  }
+}
