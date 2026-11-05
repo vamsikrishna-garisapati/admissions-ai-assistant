@@ -90,3 +90,4 @@ CREATE TABLE IF NOT EXISTS knowledge_documents (
     created_at INTEGER NOT NULL DEFAULT (unixepoch())
 );
 CREATE INDEX IF NOT EXISTS idx_knowledge_category ON knowledge_documents(category);
+

@@ -49,3 +49,4 @@ privacyRouter.post('/privacy/withdraw', async (c) => {
     message: 'Your consent has been successfully withdrawn. We will not contact you.'
   });
 });
+

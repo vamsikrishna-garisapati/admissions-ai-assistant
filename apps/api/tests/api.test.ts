@@ -78,3 +78,4 @@ describe('API Route Integration Tests', () => {
     expect(body.message).toBe('Route not found');
   });
 });
+

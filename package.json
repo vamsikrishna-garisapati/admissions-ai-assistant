@@ -6,8 +6,10 @@
   "scripts": {
     "dev:api": "pnpm --filter @10k/api dev",
     "test:api": "pnpm --filter @10k/api test",
+    "lint:api": "pnpm --filter @10k/api lint",
     "build:api": "pnpm --filter @10k/api build",
-    "test": "pnpm -r test"
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint"
   },
   "devDependencies": {
     "typescript": "^5.7.3"

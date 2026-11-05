@@ -46,3 +46,4 @@ describe('Session Security Service', () => {
     expect(hash1.length).toBe(16);
   });
 });
+

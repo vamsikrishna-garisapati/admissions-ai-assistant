@@ -93,3 +93,4 @@ export interface Env {
   VECTORIZE: VectorizeIndex;
   R2: R2Bucket;
 }
+

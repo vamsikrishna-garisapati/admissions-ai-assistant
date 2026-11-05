@@ -83,3 +83,4 @@ export async function syncLeadToGoogleSheet(env: Env, lead: Lead): Promise<boole
     return false;
   }
 }
+

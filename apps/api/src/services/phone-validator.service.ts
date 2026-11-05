@@ -67,3 +67,4 @@ export function validateAndNormalizeIndianPhone(input: string): PhoneValidationR
     formatted: `+91 ${cleaned10.slice(0, 5)} ${cleaned10.slice(5)}`
   };
 }
+

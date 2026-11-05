@@ -105,3 +105,4 @@ Leads are deterministically scored (0–100) using business rules (no LLM halluc
 - `25–49`: Exploring
 - `50–74`: Interested (Auto-qualified)
 - `75–100`: High intent (Urgent callback)
+

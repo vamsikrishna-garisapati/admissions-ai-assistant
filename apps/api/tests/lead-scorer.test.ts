@@ -79,3 +79,4 @@ describe('Lead Scorer Service (PRD Section 12)', () => {
     expect(res.tier).toBe('High intent');
   });
 });
+

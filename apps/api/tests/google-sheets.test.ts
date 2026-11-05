@@ -35,3 +35,4 @@ describe('Google Sheets Service', () => {
     expect(formatted.timestamp).toBeDefined();
   });
 });
+

@@ -52,3 +52,4 @@ sessionsRouter.get('/sessions/:id', async (c) => {
     }
   });
 });
+
