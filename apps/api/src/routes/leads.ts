@@ -169,7 +169,7 @@ leadsRouter.post('/leads', async (c) => {
 
   // Record consent audit entry if callback requested
   if (data.consentGiven && data.callbackRequested) {
-    const consentText = data.consentText || 'I consent to 10000Coders admissions contacting me regarding training programmes.';
+    const consentText = data.consentText || 'I consent to admissions contacting me regarding training programmes.';
     await c.env.DB.prepare(
       `INSERT INTO consent_records (id, lead_id, session_id, consent_type, granted, consent_text, created_at)
        VALUES (?, ?, ?, 'counselling_callback', 1, ?, ?)`

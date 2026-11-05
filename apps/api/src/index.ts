@@ -12,11 +12,13 @@ const app = new Hono<{ Bindings: Env }>();
 app.use('*', async (c, next) => {
   const corsMiddleware = cors({
     origin: (origin) => {
-      // In production, match 10000coders.in domains; in dev allow all
-      if (!origin || origin.includes('10000coders.in') || origin.includes('localhost')) {
-        return origin || '*';
+      // In development allow all; in production allow configured CORS_ORIGIN or request origin if matching
+      const allowedOrigin = c.env.CORS_ORIGIN || '*';
+      if (allowedOrigin === '*' || !origin) return origin || '*';
+      if (origin === allowedOrigin || origin.includes('localhost')) {
+        return origin;
       }
-      return c.env.CORS_ORIGIN || '*';
+      return allowedOrigin;
     },
     allowMethods: ['GET', 'POST', 'PATCH', 'OPTIONS'],
     allowHeaders: ['Content-Type', 'Authorization'],

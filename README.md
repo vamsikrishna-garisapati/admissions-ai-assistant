@@ -1,6 +1,6 @@
-# 10000Coders AI Admissions Assistant
+# AI Admissions Assistant
 
-An intelligent, 24/7 digital admissions counselor for **10000Coders** (`10000coders.in`). The assistant guides prospective students through course options, training methodologies, batch schedules, fees, and placement support using Retrieval-Augmented Generation (RAG). It progressively captures leads and dispatches qualified callback requests in real time to **Google Sheets**.
+An intelligent, 24/7 digital admissions counselor for prospective students. The assistant guides candidates through course options, training methodologies, batch schedules, fees, and placement support using Retrieval-Augmented Generation (RAG). It progressively captures leads and dispatches qualified callback requests in real time to **Google Sheets**.
 
 ---
 
@@ -10,7 +10,7 @@ An intelligent, 24/7 digital admissions counselor for **10000Coders** (`10000cod
 - **Database:** Cloudflare D1 (SQLite engine for sessions, message history, leads, consent audit trail)
 - **Vector Search:** Cloudflare Vectorize (768-dimensional embeddings via `@cf/baai/bge-base-en-v1.5`)
 - **LLM Inference:** Cloudflare Workers AI (`@cf/meta/llama-3.1-8b-instruct`)
-- **Knowledge Store:** Cloudflare R2 (`10000coders-docs`)
+- **Knowledge Store:** Cloudflare R2 (`admissions-docs`)
 - **Admissions Dispatch:** Google Sheets via Google Apps Script Webhook
 - **Frontend Widget:** Lightweight React/Next.js widget with Server-Sent Events (SSE) streaming
 
@@ -33,7 +33,7 @@ An intelligent, 24/7 digital admissions counselor for **10000Coders** (`10000cod
 ├── scripts/
 │   ├── google-sheets/          # One-click Google Apps Script receiver (Code.gs)
 │   └── ingest/                 # Offline markdown RAG chunker & Vectorize indexer
-└── PRD.md                      # Official Product Requirements Document
+└── PRD.md                      # Product Requirements Document
 ```
 
 ---
@@ -52,7 +52,7 @@ pnpm install
 
 ### 3. Run Automated Tests
 ```bash
-pnpm --filter @10k/api test
+pnpm test
 ```
 
 ### 4. Apply Local D1 Database Migrations
@@ -71,7 +71,7 @@ The API will be live at `http://localhost:8787/api/v1`.
 
 ## Google Sheets Integration Setup (5 Minutes)
 
-1. Open [Google Sheets](https://sheets.new) and name the spreadsheet: **"10000Coders AI Admissions Leads"**.
+1. Open [Google Sheets](https://sheets.new) and name the spreadsheet: **"AI Admissions Leads"**.
 2. Go to **Extensions > Apps Script**.
 3. Copy the contents of `scripts/google-sheets/Code.gs` and paste it into the editor.
 4. Select `setupHeaders` from the dropdown and click **Run** (formats headers with `#1a365d` styling).
@@ -105,4 +105,3 @@ Leads are deterministically scored (0–100) using business rules (no LLM halluc
 - `25–49`: Exploring
 - `50–74`: Interested (Auto-qualified)
 - `75–100`: High intent (Urgent callback)
-

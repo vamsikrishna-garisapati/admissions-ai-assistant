@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-# 10000Coders AI Admissions Assistant - Live API Verification Script
+# AI Admissions Assistant - Live API Verification Script
 # Usage: ./scripts/test-live-api.sh [http://localhost:8787]
 
 API_BASE="${1:-http://localhost:8787}/api/v1"
 
 echo "=========================================================="
-echo "  10000Coders AI Admissions Assistant API Verification"
+echo "  AI Admissions Assistant API Verification"
 echo "  Target: $API_BASE"
 echo "=========================================================="
 echo ""

@@ -24,7 +24,7 @@ function bufferToHex(buffer: ArrayBuffer): string {
 export async function generateSessionToken(sessionId: string, secret: string): Promise<string> {
   const key = await getCryptoKey(secret);
   const enc = new TextEncoder();
-  const signature = await crypto.subtle.sign('HMAC', key, enc.encode(`10k_session:${sessionId}`));
+  const signature = await crypto.subtle.sign('HMAC', key, enc.encode(`admit_session:${sessionId}`));
   return `${sessionId}.${bufferToHex(signature)}`;
 }
 
@@ -50,7 +50,7 @@ export async function verifySessionToken(token: string, secret: string): Promise
     'HMAC',
     key,
     sigBytes,
-    enc.encode(`10k_session:${sessionId}`)
+    enc.encode(`admit_session:${sessionId}`)
   );
 
   return { valid: isValid, sessionId: isValid ? sessionId : undefined };

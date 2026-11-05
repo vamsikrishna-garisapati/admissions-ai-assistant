@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { generateSessionToken, verifySessionToken, hashIp } from '../src/services/session.service';
 
 describe('Session Security Service', () => {
-  const secret = 'super_secret_test_key_for_10000coders_tests';
+  const secret = 'super_secret_test_key_for_admissions_tests';
 
   it('generates a signed session token containing sessionId', async () => {
     const sessionId = 'test-session-12345';

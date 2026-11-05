@@ -1,20 +1,20 @@
 # Product Requirements Document (PRD)
-# 10000Coders AI Admissions Assistant
+# AI Admissions Assistant
 
-**Product:** 10000Coders AI Career Assistant  
-**Organization:** 10000Coders  
+**Product:** AI Admissions Assistant  
+**Organization:** Admissions & Career Training  
 **Version:** 1.0  
 **Date:** 5 November 2026  
 **Status:** Proposed – Ready for Technical Planning  
 **Priority:** High  
-**Platform:** 10000coders.in  
+**Platform:** Institute Website  
 **Primary objective:** Increase qualified student enquiries and admissions through AI-powered conversations.
 
 ---
 
 ## 1. Executive Summary
 
-10000Coders will introduce an AI-powered conversational assistant on its main website to help prospective students understand courses, career opportunities, admission requirements, training methodology, fees and placement support.
+The institute will introduce an AI-powered conversational assistant on its main website to help prospective students understand courses, career opportunities, admission requirements, training methodology, fees and placement support.
 
 The assistant will be available 24/7 and will act as an initial digital admissions counsellor.
 
@@ -34,7 +34,7 @@ Build an AI admissions assistant that turns website visitors into informed prosp
 
 ## 2. Problem Statement
 
-Visitors coming to 10000coders.in may have questions before deciding whether to join a course.
+Visitors coming to the website may have questions before deciding whether to join a course.
 
 Common questions include:
 
@@ -180,7 +180,7 @@ It should:
 
 ### Welcome message
 
-"Hello! 👋 Welcome to 10000Coders.
+"Hello! 👋 Welcome to our Career Admissions Assistant.
 
 Are you planning to start your career in IT, switch careers or improve your technical skills?
 
@@ -203,7 +203,7 @@ Example:
 
 **Visitor:** I completed B.Tech in 2025. I want to become a Python developer.
 
-**Assistant:** Since you've completed B.Tech and are interested in Python development, I can help you explore the relevant training options at 10000Coders. Are you currently preparing for jobs or looking for structured training?
+**Assistant:** Since you've completed B.Tech and are interested in Python development, I can help you explore the relevant training options. Are you currently preparing for jobs or looking for structured training?
 
 The assistant should avoid requesting personal contact information before providing useful information.
 
@@ -308,7 +308,7 @@ The assistant must not:
 
 The chatbot must use Retrieval-Augmented Generation (RAG).
 
-Its answers should be grounded in approved 10000Coders information rather than relying only on the model's general knowledge.
+Its answers should be grounded in approved institute information rather than relying only on the model's general knowledge.
 
 ### Initial knowledge sources
 
@@ -316,7 +316,7 @@ Its answers should be grounded in approved 10000Coders information rather than r
 
 Extract relevant approved content from public website pages, including:
 
-- About 10000Coders.
+- About the institute.
 - Course pages.
 - Training methodology.
 - Placement information.
@@ -376,7 +376,7 @@ When important information changes, the knowledge base must be reindexed.
 
 The solution will use two independent repositories.
 
-**Repository 1: Existing 10000Coders website**
+**Repository 1: Existing website**
 
 Technology: Next.js
 
@@ -395,7 +395,7 @@ Responsibilities:
 
 Repository name:
 
-`10000coders-ai-assistant`
+`admissions-ai-assistant`
 
 Technology: TypeScript + Cloudflare Workers + Hono.
 
@@ -429,8 +429,8 @@ Responsibilities:
 
 ### 9.3 Suggested domains
 
-- Website: `10000coders.in`
-- Backend API: `assistant-api.10000coders.in`
+- Website: `example.com` (Main Website)
+- Backend API: `assistant-api.example.com`
 
 The chatbot UI will initially remain inside the existing Next.js website repository.
 
@@ -440,7 +440,7 @@ The chatbot UI will initially remain inside the existing Next.js website reposit
 
 Base URL:
 
-`https://assistant-api.10000coders.in/api/v1`
+`https://assistant-api.example.com/api/v1`
 
 Required API endpoints:
 
@@ -702,7 +702,7 @@ Specific latency, availability and concurrency targets should be finalized after
 
 ### Phase 1 – Backend Foundation
 
-- Create `10000coders-ai-assistant` repository.
+- Create `admissions-ai-assistant` repository.
 - Initialize TypeScript Cloudflare Worker.
 - Configure Hono and Zod.
 - Create Cloudflare D1.
@@ -908,10 +908,10 @@ After MVP validation:
 
 | Decision | Final selection |
 |---|---|
-| Product | 10000Coders AI Admissions Assistant |
+| Product | AI Admissions Assistant |
 | Existing website | Next.js |
 | Backend repository | Separate repository |
-| Repository name | `10000coders-ai-assistant` |
+| Repository name | `admissions-ai-assistant` |
 | Backend runtime | Cloudflare Workers |
 | Backend language | TypeScript |
 | API framework | Hono |

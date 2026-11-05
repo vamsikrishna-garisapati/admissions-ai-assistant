@@ -1,14 +1,14 @@
 /**
- * 10000Coders AI Admissions Assistant - Google Sheets Receiver
+ * AI Admissions Assistant - Google Sheets Receiver
  * 
  * Setup Instructions:
- * 1. Create a new Google Sheet named "10000Coders AI Admissions Leads".
+ * 1. Create a new Google Sheet named "AI Admissions Leads".
  * 2. Go to Extensions > Apps Script.
  * 3. Replace all code in Code.gs with this file.
  * 4. Run `setupHeaders()` once to initialize column headers.
  * 5. Click Deploy > New Deployment.
  * 6. Select Type: Web App.
- *    - Description: "10000Coders Lead Webhook"
+ *    - Description: "Admissions Lead Webhook"
  *    - Execute as: "Me"
  *    - Who has access: "Anyone"
  * 7. Copy the Web App URL and set it as `GOOGLE_SHEETS_WEBHOOK_URL` in Cloudflare Worker secrets or wrangler.toml.
@@ -100,4 +100,3 @@ function doPost(e) {
       .setMimeType(ContentService.MimeType.JSON);
   }
 }
-

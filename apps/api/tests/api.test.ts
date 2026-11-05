@@ -4,7 +4,7 @@ import app from '../src/index';
 describe('API Route Integration Tests', () => {
   const mockEnv = {
     ENVIRONMENT: 'development',
-    SESSION_SECRET: 'test_secret_for_hono_api_routes_10k',
+    SESSION_SECRET: 'test_secret_for_hono_api_routes_admit',
     CORS_ORIGIN: '*',
     DB: {
       prepare: (query: string) => ({
@@ -37,7 +37,7 @@ describe('API Route Integration Tests', () => {
 
     const body = await res.json() as any;
     expect(body.status).toBe('healthy');
-    expect(body.service).toBe('10000coders-ai-assistant');
+    expect(body.service).toBe('admissions-ai-assistant');
   });
 
   it('POST /api/v1/sessions creates a new session with signed token', async () => {

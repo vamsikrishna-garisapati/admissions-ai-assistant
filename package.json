@@ -1,24 +1,17 @@
 {
-  "name": "10k-chatbot-workspace",
+  "name": "admissions-assistant-workspace",
   "version": "1.0.0",
   "private": true,
-  "description": "10000Coders AI Admissions Assistant Monorepo",
+  "description": "AI Admissions Assistant Monorepo",
   "scripts": {
-    "dev:api": "pnpm --filter @10k/api dev",
-    "test:api": "pnpm --filter @10k/api test",
-    "lint:api": "pnpm --filter @10k/api lint",
-    "build:api": "pnpm --filter @10k/api build",
+    "dev:api": "pnpm --filter @admissions/api dev",
+    "test:api": "pnpm --filter @admissions/api test",
+    "lint:api": "pnpm --filter @admissions/api lint",
+    "build:api": "pnpm --filter @admissions/api build",
     "test": "pnpm -r test",
     "lint": "pnpm -r lint"
   },
   "devDependencies": {
     "typescript": "^5.7.3"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "workerd",
-      "sharp"
-    ]
   }
 }

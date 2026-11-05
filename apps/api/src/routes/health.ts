@@ -7,7 +7,7 @@ healthRouter.get('/health', (c) => {
   return c.json({
     status: 'healthy',
     timestamp: new Date().toISOString(),
-    service: '10000coders-ai-assistant',
+    service: 'admissions-ai-assistant',
     version: '1.0.0'
   });
 });
