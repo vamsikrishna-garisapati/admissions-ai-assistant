@@ -15,7 +15,7 @@ SIMILARITY_SCORE_THRESHOLD = "0.65"
 [[d1_databases]]
 binding = "DB"
 database_name = "admissions-leads"
-database_id = "local-d1-id"
+database_id = "01cbe03a-7916-4d0d-ad86-8de112141e46"
 migrations_dir = "migrations"
 
 # Cloudflare Workers AI binding
