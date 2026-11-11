@@ -5,6 +5,8 @@ import { healthRouter } from './routes/health';
 import { sessionsRouter } from './routes/sessions';
 import { leadsRouter } from './routes/leads';
 import { privacyRouter } from './routes/privacy';
+import { chatRouter } from './routes/chat';
+import { adminRouter } from './routes/admin';
 
 const app = new Hono<{ Bindings: Env }>();
 
@@ -62,6 +64,8 @@ app.route('/api/v1', healthRouter);
 app.route('/api/v1', sessionsRouter);
 app.route('/api/v1', leadsRouter);
 app.route('/api/v1', privacyRouter);
+app.route('/api/v1', chatRouter);
+app.route('/api/v1', adminRouter);
 
 // 404 handler
 app.notFound((c) => {

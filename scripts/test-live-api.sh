@@ -92,6 +92,25 @@ WITHDRAW_RES=$(curl -s -X POST "$API_BASE/privacy/withdraw" \
 echo "Response: $WITHDRAW_RES"
 echo ""
 
+# 8. Chat (JSON non-stream) — requires knowledge ingest for grounded answers
+echo "💬 8. Testing Chat (POST /chat stream=false)..."
+CHAT_RES=$(curl -s -X POST "$API_BASE/chat" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{
+    "message": "Which courses do you offer?",
+    "stream": false
+  }')
+echo "Response: $CHAT_RES"
+echo ""
+
+# 9. Message history
+echo "🗂️  9. Testing Message History (GET /sessions/:id/messages)..."
+MSG_RES=$(curl -s -X GET "$API_BASE/sessions/$SESSION_ID/messages" \
+  -H "Authorization: Bearer $TOKEN")
+echo "Response: $MSG_RES"
+echo ""
+
 echo "=========================================================="
 echo "  ✅ All API verification scenarios executed!"
 echo "=========================================================="

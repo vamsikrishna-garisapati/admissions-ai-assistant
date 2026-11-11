@@ -81,6 +81,15 @@ export interface KnowledgeDocument {
   created_at: number;
 }
 
+export interface RagSource {
+  id: string;
+  score: number;
+  title?: string;
+  category?: string;
+  source?: string;
+  text: string;
+}
+
 export interface Env {
   ENVIRONMENT: string;
   SESSION_SECRET: string;
@@ -88,9 +97,14 @@ export interface Env {
   GOOGLE_SHEETS_WEBHOOK_URL?: string;
   MAX_CHAT_TURNS_HISTORY?: string;
   SIMILARITY_SCORE_THRESHOLD?: string;
+  INGEST_SECRET?: string;
   DB: D1Database;
   AI: Ai;
   VECTORIZE: VectorizeIndex;
   R2: R2Bucket;
 }
+
+/** Single swap point for the chat LLM. */
+export const CHAT_MODEL = '@cf/ibm-granite/granite-4.0-h-micro';
+export const EMBEDDING_MODEL = '@cf/baai/bge-base-en-v1.5';
 

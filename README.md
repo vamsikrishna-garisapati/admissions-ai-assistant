@@ -9,10 +9,11 @@ An intelligent, 24/7 digital admissions counselor for prospective students. The 
 - **Runtime:** Cloudflare Workers (TypeScript + Hono)
 - **Database:** Cloudflare D1 (SQLite engine for sessions, message history, leads, consent audit trail)
 - **Vector Search:** Cloudflare Vectorize (768-dimensional embeddings via `@cf/baai/bge-base-en-v1.5`)
-- **LLM Inference:** Cloudflare Workers AI (`@cf/meta/llama-3.1-8b-instruct`)
+- **LLM Inference:** Cloudflare Workers AI (`@cf/ibm-granite/granite-4.0-h-micro`)
+- **Embeddings:** `@cf/baai/bge-base-en-v1.5` (768-d) into Vectorize
 - **Knowledge Store:** Cloudflare R2 (`admissions-docs`)
 - **Admissions Dispatch:** Google Sheets via Google Apps Script Webhook
-- **Frontend Widget:** Lightweight React/Next.js widget with Server-Sent Events (SSE) streaming
+- **Frontend Widget:** Lightweight React/Next.js widget with Server-Sent Events (SSE) streaming (planned)
 
 ---
 
@@ -66,6 +67,26 @@ pnpm d1:migrate:local
 pnpm dev:api
 ```
 The API will be live at `http://localhost:8787/api/v1`.
+
+### 6. Ingest Knowledge Base (RAG)
+Vectorize + Workers AI need Cloudflare network access, so prefer ingesting against the **deployed** Worker:
+```bash
+INGEST_SECRET=dev_ingest_secret_change_me pnpm ingest:remote
+```
+`INGEST_SECRET` must match the Worker var/secret (`dev_ingest_secret_change_me` in `wrangler.toml`; override in production with `wrangler secret put INGEST_SECRET`).
+
+Local-only ingest (`pnpm ingest`) requires a running `wrangler dev` with working AI/Vectorize bindings (Wrangler 3 may leave Vectorize undefined locally).
+
+### Chat API (quick check)
+```bash
+# Create a session, then:
+curl -s -X POST http://localhost:8787/api/v1/chat \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"message":"Which courses do you offer?","stream":false}'
+```
+- `POST /api/v1/chat` — JSON (`stream:false`) or SSE (`stream:true`, default)
+- `GET /api/v1/sessions/:id/messages` — conversation history
 
 ---
 

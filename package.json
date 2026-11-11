@@ -8,6 +8,8 @@
     "test:api": "pnpm --filter @admissions/api test",
     "lint:api": "pnpm --filter @admissions/api lint",
     "build:api": "pnpm --filter @admissions/api build",
+    "ingest": "node scripts/ingest/ingest.mjs --local",
+    "ingest:remote": "node scripts/ingest/ingest.mjs --remote",
     "test": "pnpm -r test",
     "lint": "pnpm -r lint"
   },
